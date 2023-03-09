@@ -80,7 +80,7 @@ trans_resize = dataset.ImageTransform_resize(content_tensor.shape[2:])
 #モデル読み込み
 alpha = 0
 net_list = []
-model_path = '/content/drive/MyDrive/3D/model/coco3/Iter5000_epoch9.pth'
+model_path = ''
 
 alpha = float(input("αを入力してください。スタイル画像(α) : コンテンツ画像(1-α) 背景 : "))
 net = model.Style_transfer(alpha).to(device)
@@ -134,5 +134,5 @@ output = output.to('cpu')
 
 filename_end = input("出力ファイル名を入力してください : ")
 
-filename = "/content/drive/MyDrive/3D/output_create/" + str(filename_end) + ".png"
+filename = "" + str(filename_end) + ".png"
 torchvision.utils.save_image(output, filename)
